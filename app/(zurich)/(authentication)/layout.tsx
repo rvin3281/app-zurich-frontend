@@ -1,5 +1,7 @@
+import { SessionProvider } from "next-auth/react";
+
 export default function AuthenticationLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return <div>{children}</div>;
+  return <SessionProvider>{children}</SessionProvider>;
 }
