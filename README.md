@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MyZurich App (Frontend)
 
-## Getting Started
+This project is a frontend application built using **Next.js 14** with the **App Router** for routing. It’s styled with **Tailwind CSS** and uses **Shadcn UI** components for a clean and responsive design. Authentication is handled using **Auth.js** (the latest version of NextAuth), supporting both **Google OAuth** and **Custom Credentials** for role-based access (User/Admin).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **React 18** – Component-based UI development.
+- **Next.js 14 (App Router)** – Full-stack React framework with built-in routing and SSR.
+- **Tailwind CSS** – Utility-first CSS framework for styling.
+- **TypeScript** – Type-safe JavaScript for improved developer experience.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Highlighted Libraries & Packages
 
-## Learn More
+- **axios** – For making API requests to the backend.
+- **class-variance-authority** – Utility for managing Tailwind CSS classes conditionally.
+- **next-auth** – Authentication using Google OAuth and Credentials.
+- **react-hook-form** – Form state management and validation.
+- **react-icons** – Icon library for React.
+- **react-redux** – State management with Redux.
+- **zod** – Schema validation for form data and API requests.
+- **tailwindcss** – Styling framework.
+- **typescript** – Type-safe language enhancing JavaScript.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Pages / Routes Overview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Route                                         | Description                        |
+| --------------------------------------------- | ---------------------------------- |
+| `/zurich/authentication/login`                | Login page for admin (Credentials) |
+| `/zurich/authentication/unauthorized`         | Unauthorized access page           |
+| `/zurich/dashboard/billing`                   | Billing dashboard                  |
+| `/zurich/dashboard/billing/add-new-billing`   | Create a new billing record        |
+| `/zurich/dashboard/billing/view-billing/[id]` | View a billing record by ID        |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Authentication Flow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Google OAuth**: Used for **user roles** to login via Google.
+- **Credentials Authentication**: Used for **admin roles**, where admins login with email/password.
+
+Auth.js (NextAuth v5) handles session management, token storage, and route protection. Middleware is configured to secure dashboard routes, ensuring only authenticated users can access protected pages.
+
+---
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following structure:
+
+1. AUTH_SECRET=
+2. AUTH_GOOGLE_ID=
+3. AUTH_GOOGLE_SECRET=
+4. NEXT_PUBLIC_API_BASE_URL=http://localhost:4000
+
+---
+
+## Running the Project
+
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   ```
+2. **Install dependencies**:
+
+- npm install
+
+3. **Setup environment variables**:
+4. **Run the development server**
+
+- npm run dev
+
+---
+
+## Key Components & Features
+
+### Middleware
+
+- Configured to protect routes based on user roles (User/Admin).
+- Automatically redirects unauthenticated users to the **login** or **unauthorized** page.
+
+### Component Structure
+
+- Shared components are modular and reusable (e.g., buttons, form inputs).
+- Built with **Shadcn UI** for a clean and consistent design system.
+
+### Libs Folder
+
+- Contains shared utilities, constants, and helper functions.
+- Promotes code reusability and better project organization.
+
+### Dynamic Forms
+
+- Developed using **react-hook-form** for form state management.
+- Validated with **zod** to ensure strong input validation and schema enforcement.

@@ -1,4 +1,7 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
+// @import "bootstrap/scss/bootstrap";
 @import "./utils/utilities.scss";
 @import "./custom/login-style.scss";
 @import "./utils/_form-utils";
+@import "./utils/base";
+@import "./custom/layout-style.scss";
+@import "./utils/_button-utils";

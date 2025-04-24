@@ -1,0 +1,70 @@
+.header {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  &__logo {
+    flex-shrink: 0;
+    margin-right: 3rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+
+    &__menu {
+      display: flex;
+      &__nav {
+        &__ul {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+
+  &__auth {
+    display: flex;
+    gap: 2rem;
+
+    &__email {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        line-height: normal;
+
+        svg {
+          width: 40px;
+          height: 40px;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 2rem;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
