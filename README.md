@@ -29,13 +29,13 @@ This project is a frontend application built using **Next.js 14** with the **App
 
 ## Pages / Routes Overview
 
-| Route                                         | Description                        |
-| --------------------------------------------- | ---------------------------------- |
-| `/zurich/authentication/login`                | Login page for admin (Credentials) |
-| `/zurich/authentication/unauthorized`         | Unauthorized access page           |
-| `/zurich/dashboard/billing`                   | Billing dashboard                  |
-| `/zurich/dashboard/billing/add-new-billing`   | Create a new billing record        |
-| `/zurich/dashboard/billing/view-billing/[id]` | View a billing record by ID        |
+| Route                        | Description                        |
+| ---------------------------- | ---------------------------------- |
+| `/login`                     | Login page for admin (Credentials) |
+| `/unauthorized`              | Unauthorized access page           |
+| `/billing`                   | Billing dashboard                  |
+| `/billing/add-new-billing`   | Create a new billing record        |
+| `/billing/view-billing/[id]` | View a billing record by ID        |
 
 ---
 
